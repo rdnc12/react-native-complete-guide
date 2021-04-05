@@ -24,7 +24,13 @@ export default function App() {
         />
         <Button title="Add" onPress={addGoalHandler} />
       </View>
-      <View></View>
+      <View>
+        {courseGoals.map((goal, index) => (
+          <View style={styles.listItem}>
+            <Text key={index}>{goal}</Text>
+          </View>
+        ))}
+      </View>
     </View>
   );
 }
@@ -45,6 +51,13 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     padding: 10,
   },
+  listItem:{
+    padding:10,
+    marginVertical:10,
+    backgroundColor:'#ccc',
+    borderColor:'black',
+    borderWidth:1
+  }
 });
 
 // We can not see textinput component in display,we need to add some styling.
