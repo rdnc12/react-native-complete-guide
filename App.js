@@ -3,28 +3,38 @@ import { StyleSheet, Text, View, TextInput, Button } from "react-native";
 
 export default function App() {
   return (
-    <View style={{ padding: 50 }}>
-      <View
-        style={{
-          flexDirection: "row",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
-      >
+    <View style={styles.screen}>
+      <View style={styles.inputContainer}>
         <TextInput
           placeholder="Course Goal"
-          style={{
-            width: "80%",
-            borderBottomColor: "black",
-            borderBottomWidth: 1,
-            padding: 10,
-          }}
+          style={styles.input}
         />
         <Button title="Add" />
       </View>
-      <View></View>
+      <View/>
     </View>
   );
 }
 
+// Using a StyleSheet adds validation and potential performance improvements
+const styles = StyleSheet.create({
+  screen: {
+    padding: 50,
+  },
+  inputContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  input:{
+    width: "80%",
+    borderBottomColor: "black",
+    borderBottomWidth: 1,
+    padding: 10,
+  }
+});
+
 // We can not see textinput component in display,we need to add some styling.
+
+// FLEXBOX: A concept/ set of styling properties that allows you to structure content
+// (create layout...)
