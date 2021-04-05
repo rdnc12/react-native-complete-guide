@@ -13,6 +13,9 @@ export default function App() {
 
   //when all state change,the component re-render otherwise not.
   const addGoalHandler = (goalTitle) => {
+    if (goalTitle.length === 0) {
+      return;
+    }
     setCourseGoals((currentGoals) => [
       ...currentGoals,
       { id: Math.random().toString(), value: goalTitle },
