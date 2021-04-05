@@ -1,11 +1,13 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 
-const GoalItem = ({title}) => {
+const GoalItem = ({ title, id, onDelete }) => {
   return (
-    <View style={styles.listItem}>
-      <Text>{title}</Text>
-    </View>
+    <TouchableOpacity onPress={onDelete.bind(this, id)}>
+      <View style={styles.listItem}>
+        <Text>{title}</Text>
+      </View>
+    </TouchableOpacity>
   );
 };
 
@@ -20,3 +22,7 @@ const styles = StyleSheet.create({
 });
 
 export default GoalItem;
+
+// bind this to set a default argument when this gets called and the default argument
+//would be ID, so the id we're also getting so that this id is passed to onDelete
+// when it is getting called upon a press.
